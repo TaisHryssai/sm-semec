@@ -8,7 +8,7 @@ require 'recipe/laravel.php';
 set('application', 'sm-semec');
 
 // Project repository
-set('repository', 'git@github.com:TaisHryssai/sm-semec.git');
+set('repository', 'git@github.com:TaisHryssai/sm-semec.git');//git@github.com:utfpr-gp-tsi/sm-semec.git
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
@@ -36,7 +36,9 @@ host('production')
  * --------------------------------- */
 
 task('deploy:cp-docker-files', function () {
-    run('cd {{release_path}} && cp deploy/production/* {{deploy_path}}');
+	upload('deploy/production/', "{{deploy_path}}");
+    upload('deploy/php/', "{{deploy_path}}/shared/php/");
+    upload('deploy/mysql/', "{{deploy_path}}/shared/mysql/");
 })->onStage('production');
 
 task('deploy:build-containers', function () {

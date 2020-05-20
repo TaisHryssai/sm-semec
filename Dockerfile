@@ -25,7 +25,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     sudo \
     ssh \
-    procps
+    procps\
+    rsync
 
 RUN pecl install xdebug
 

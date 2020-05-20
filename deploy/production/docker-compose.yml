@@ -18,7 +18,7 @@ services:
     working_dir: /var/www/sm-semec
     volumes:
       - ./:/var/www/sm-semec
-      - ./current/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./shared/php/server.ini:/usr/local/etc/php/conf.d/server.ini
       - vendor_path:/vendor
     networks:
       - app-network
@@ -42,7 +42,7 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql/
-      - ./current/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./shared/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
 
