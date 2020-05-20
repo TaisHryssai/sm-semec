@@ -17,7 +17,7 @@ set('default_timeout', 600);
 
 // Shared files/dirs between deploys 
 add('shared_files', ['.env']);
-add('shared_dirs', ['logs','public/uploads','vendor']);
+add('shared_dirs', ['logs', 'public/uploads', 'vendor']);
 
 // Hosts
 
